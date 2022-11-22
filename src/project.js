@@ -1,3 +1,4 @@
+import Arrow from './arrow.svg'
 export {projectmenu, projectTiles}
 
 var projects = [];
@@ -52,6 +53,9 @@ const projectmenu = () => {
 
 const projectTiles = () => {
     const pGrid = document.getElementById('proj-grid');
+    let arrow = new Image();
+    arrow.src = Arrow;
+    arrow.setAttribute('class', 'arrow-img');
     //Creates main project tile
     const mainDiv = (i, array) => {
         let newDiv = pGrid.insertAdjacentElement('beforeend', document.createElement('div'));
@@ -77,6 +81,13 @@ const projectTiles = () => {
         dateDiv.innerHTML = array[i].duedate;
     }
 
+    const setArrow = (i) => {
+        let aTag = pGrid.children[i].insertAdjacentElement('beforeend', document.createElement('a'));
+        aTag.setAttribute('href', "");
+        aTag.setAttribute('class', 'arrow-btn');
+        aTag.appendChild(arrow);
+    }
+
     const build = () => {
         pGrid.innerHTML = '';
         for (let i = 0; i < projects.length; i++) {
@@ -84,6 +95,7 @@ const projectTiles = () => {
             setTitle(i, projects);
             setDescrip(i, projects);
             setDate(i, projects);
+            setArrow(i)
         }
     }
 

@@ -93,6 +93,17 @@ form {
     right: 10px;
 }
 
+.arrow-btn {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+}
+
+.arrow-img {
+    width: 20px;
+    height: 20px;
+}
+
 footer {
     display: flex;
     justify-content: center;
