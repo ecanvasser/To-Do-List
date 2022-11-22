@@ -39,7 +39,8 @@ const projectmenu = () => {
             }
         });
 
-        projects.push(newProj)
+        projects.push(newProj);
+        console.log(projects);
     }
 
     return {
