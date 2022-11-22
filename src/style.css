@@ -11,6 +11,8 @@ header {
     background-color: #4ade80;
     padding: 3rem 0;
     margin-bottom: 1rem;
+    box-shadow: 0 4px 4px -1px gray;
+
 }
 
 #title {
