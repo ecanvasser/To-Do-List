@@ -1,13 +1,21 @@
+export {projectmenu}
+
 var projects = [];
 
 const projectmenu = () => {
     
     const menuDisplay = () => {
         document.getElementById('np-menu').style.display = 'block';
+        document.getElementsByTagName('header')[0].style.opacity = '0.5';
+        document.getElementsByTagName('main')[0].style.opacity = '0.5';
+        document.getElementsByTagName('footer')[0].style.opacity = '0.5';
     }
 
     const menuClose = () => {
         document.getElementById('np-menu').style.display = 'none';
+        document.getElementsByTagName('header')[0].style.opacity = '1';
+        document.getElementsByTagName('main')[0].style.opacity = '1';
+        document.getElementsByTagName('footer')[0].style.opacity = '1';
     }
 
     const addProj = () => {

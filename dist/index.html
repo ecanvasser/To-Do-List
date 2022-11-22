@@ -13,6 +13,23 @@
         <div id="title">To-Do List</div>
         <a href="" id="new-proj">New Project</a>
     </header>
+    <div id="np-menu">
+        <div id="menu-title">New Project</div>
+        <form action="" id="project">
+            <label for="ptitle">Title</label>
+            <input type="text" id="pTitle">
+            <label for="pDescrip">Description</label>
+            <textarea name="description" id="pDescrip" cols="30" rows="3"></textarea>
+            <label for="pDate">Due Date</label>
+            <input type="date" id="pDate">
+            <label for="pNotes">Notes</label>
+            <textarea name="notes" id="pNotes" cols="30" rows="3"></textarea>
+        </form>
+        <div id="form-btns">
+            <a href="" id="close-menu">Close</a>
+            <input type="submit" id="submit-menu" form="project">
+        </div>
+    </div>
     <main>
         <div id="proj-grid"></div>
     </main>
