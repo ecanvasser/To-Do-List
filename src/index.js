@@ -1,7 +1,8 @@
 import './style.css';
-import {projectmenu} from './project.js';
+import {projectmenu, projectTiles} from './project.js';
 
 const proj = projectmenu();
+const tiles = projectTiles();
 
 document.getElementById('new-proj').addEventListener('click', function(e) {
     proj.menuDisplay();
@@ -10,6 +11,7 @@ document.getElementById('new-proj').addEventListener('click', function(e) {
 
 document.getElementById('submit-menu').addEventListener('click', function(e) {
     proj.addProj();
+    tiles.build();
     e.preventDefault();
 })
 

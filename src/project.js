@@ -1,4 +1,4 @@
-export {projectmenu}
+export {projectmenu, projectTiles}
 
 var projects = [];
 
@@ -40,7 +40,7 @@ const projectmenu = () => {
         });
 
         projects.push(newProj);
-        console.log(projects);
+        menuClose();
     }
 
     return {
@@ -50,13 +50,25 @@ const projectmenu = () => {
     }
 }
 
-// const projectTile = () => {
-//     //Creates main project tile
-//     const projDiv = () => {
-//         const pGrid = document.getElementById('proj-grid');
-//         pGrid.appendChild(document.createElement('div'));
-//         pGrid.children[0].setAttribute('id', 'pTile');
+const projectTiles = () => {
+    const pGrid = document.getElementById('proj-grid');
+    //Creates main project tile
+    const mainDiv = (i) => {
+        let newDiv = pGrid.insertAdjacentElement('beforeend', document.createElement('div'));
+        newDiv.setAttribute('class', 'proj-tile');
+        newDiv.setAttribute('id', i)
+    }
 
-        
-//     }
-// }
+    const setAttr = () => {
+    }
+
+    const build = () => {
+        for (let i = 0; i < projects.length; i++) {
+            mainDiv(i);
+        }
+    }
+
+    return {
+        build
+    }
+}
