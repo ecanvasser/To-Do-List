@@ -53,18 +53,22 @@ const projectmenu = () => {
 const projectTiles = () => {
     const pGrid = document.getElementById('proj-grid');
     //Creates main project tile
-    const mainDiv = (i) => {
+    const mainDiv = (i, array) => {
         let newDiv = pGrid.insertAdjacentElement('beforeend', document.createElement('div'));
         newDiv.setAttribute('class', 'proj-tile');
-        newDiv.setAttribute('id', i)
+        newDiv.setAttribute('id', array[i].title)
     }
 
-    const setAttr = () => {
+    const setTitle = (i, array) => {
+        let titleDiv = pGrid.children[i].insertAdjacentElement('beforeend', document.createElement('div'));
+        titleDiv.innerHTML = `Title: ${array[i].title}`;
     }
 
     const build = () => {
+        pGrid.innerHTML = '';
         for (let i = 0; i < projects.length; i++) {
-            mainDiv(i);
+            mainDiv(i, projects);
+            setTitle(i, projects)
         }
     }
 

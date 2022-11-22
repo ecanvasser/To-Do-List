@@ -71,6 +71,12 @@ form {
     margin-bottom: 20px;
 }
 
+#proj-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    width: 100%;
+}
+
 footer {
     display: flex;
     justify-content: center;
