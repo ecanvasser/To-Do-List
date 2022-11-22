@@ -12,12 +12,36 @@ const toDoView = () => {
 
     const findProject = (id) => {
         targetObj.push(projects.find(x => x.title == id));
-        console.log(targetObj)
+    }
+
+    const setTitle = () => {
+        const tdGrid = document.getElementById('td-grid');
+
+        let titleDiv = tdGrid.insertAdjacentElement('beforeend', document.createElement('div'));
+        titleDiv.setAttribute('id', 'td-title');
+        titleDiv.innerHTML = `${targetObj[0].title}`;
+    }
+
+    const setSummary = () => {
+        const tdGrid = document.getElementById('td-grid');
+
+        let summParent = tdGrid.insertAdjacentElement('beforeend', document.createElement('div'));
+        summParent.setAttribute('id', 'summary');
+
+        let sTitle = summParent.insertAdjacentElement('beforeend', document.createElement('div'));
+        sTitle.setAttribute('id', 'summ-title');
+        sTitle.innerHTML = 'Summary:';
+
+        let sText = summParent.insertAdjacentElement('beforeend', document.createElement('div'));
+        sText.setAttribute('id', 'summ-text');
+        sText.innerHTML = `${targetObj[0].descrip}`;
     }
 
     const build = (id) => {
         clearPage();
         findProject(id);
+        setTitle();
+        setSummary();
     }
 
     return {
