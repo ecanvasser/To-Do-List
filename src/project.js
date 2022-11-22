@@ -53,9 +53,6 @@ const projectmenu = () => {
 
 const projectTiles = () => {
     const pGrid = document.getElementById('proj-grid');
-    let arrow = new Image();
-    arrow.src = Arrow;
-    arrow.setAttribute('class', 'arrow-img');
     //Creates main project tile
     const mainDiv = (i, array) => {
         let newDiv = pGrid.insertAdjacentElement('beforeend', document.createElement('div'));
@@ -82,10 +79,14 @@ const projectTiles = () => {
     }
 
     const setArrow = (i) => {
+        let arrow = new Image();
+        arrow.src = Arrow;
+        arrow.setAttribute('class', 'arrow-img');
+
         let aTag = pGrid.children[i].insertAdjacentElement('beforeend', document.createElement('a'));
         aTag.setAttribute('href', "");
         aTag.setAttribute('class', 'arrow-btn');
-        aTag.appendChild(arrow);
+        aTag.insertAdjacentElement('beforeend', arrow);
     }
 
     const build = () => {
