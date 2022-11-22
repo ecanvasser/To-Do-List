@@ -61,14 +61,29 @@ const projectTiles = () => {
 
     const setTitle = (i, array) => {
         let titleDiv = pGrid.children[i].insertAdjacentElement('beforeend', document.createElement('div'));
-        titleDiv.innerHTML = `Title: ${array[i].title}`;
+        titleDiv.setAttribute('class', 'tile-title');
+        titleDiv.innerHTML = array[i].title;
+    }
+
+    const setDescrip = (i, array) => {
+        let descripDiv = pGrid.children[i].insertAdjacentElement('beforeend', document.createElement('div'));
+        descripDiv.setAttribute('class', 'tile-descrip');
+        descripDiv.innerHTML = array[i].descrip;
+    }
+
+    const setDate = (i, array) => {
+        let dateDiv = pGrid.children[i].insertAdjacentElement('beforeend', document.createElement('div'));
+        dateDiv.setAttribute('class', 'tile-date');
+        dateDiv.innerHTML = array[i].duedate;
     }
 
     const build = () => {
         pGrid.innerHTML = '';
         for (let i = 0; i < projects.length; i++) {
             mainDiv(i, projects);
-            setTitle(i, projects)
+            setTitle(i, projects);
+            setDescrip(i, projects);
+            setDate(i, projects);
         }
     }
 

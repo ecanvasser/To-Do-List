@@ -10,6 +10,7 @@ header {
     justify-content: space-between;
     background-color: #4ade80;
     padding: 3rem 0;
+    margin-bottom: 1rem;
 }
 
 #title {
@@ -37,7 +38,7 @@ header {
     position: fixed;
     left: 40%;
     top: 25%;
-    background-color: #e5e5e5;
+    background-color: rgba(229, 229, 229, 1);
     padding: 20px;
     border: #4ade80 2px solid;
     border-radius: 8px;
@@ -73,8 +74,23 @@ form {
 
 #proj-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 0.33fr));
+    gap: 1.5rem 2.5rem;
+    margin: 0 1rem;
+}
+
+.proj-tile {
+    position: relative;
+    border: #4ade80 2px solid;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px black;
+    padding: 15px;
+}
+
+.tile-date {
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
 footer {
