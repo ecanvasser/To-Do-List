@@ -1,5 +1,6 @@
 import Arrow from './arrow.svg'
-export {projectmenu, projectTiles}
+export {projectmenu, projectTiles, projects}
+import {toDoView} from './to-do.js';
 
 var projects = [];
 
@@ -87,6 +88,13 @@ const projectTiles = () => {
         aTag.setAttribute('href', "");
         aTag.setAttribute('class', 'arrow-btn');
         aTag.insertAdjacentElement('beforeend', arrow);
+
+        const toDo = toDoView();
+        aTag.addEventListener('click', function(e) {
+            let targetId = e.target.closest('.proj-tile').id;
+            toDo.build(targetId);
+            e.preventDefault();
+        })
     }
 
     const build = () => {

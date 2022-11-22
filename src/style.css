@@ -106,6 +106,12 @@ form {
     height: 20px;
 }
 
+#td-grid {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
 footer {
     display: flex;
     justify-content: center;
