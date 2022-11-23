@@ -154,13 +154,13 @@ form {
     font-weight: 900;
 }
 
-#summary, #td-date {
+#summary, #td-date, #td-notes {
     display: flex;
     flex-direction: column;
     gap: 2px;
 }
 
-#summ-title, #date-title {
+#summ-title, #date-title, #notes-title {
     font-weight: 700;
 }
 

@@ -58,7 +58,14 @@ const toDoView = () => {
 
         let noteDiv = tdGrid.insertAdjacentElement('beforeend', document.createElement('div'));
         noteDiv.setAttribute('id', 'td-notes');
-        noteDiv.innerHTML = `${targetObj[0].notes}`;
+        
+        let nTitle = noteDiv.insertAdjacentElement('beforeend', document.createElement('div'));
+        nTitle.setAttribute('id', 'notes-title');
+        nTitle.innerHTML = 'Notes';
+
+        let nText = noteDiv.insertAdjacentElement('beforeend', document.createElement('div'));
+        nText.setAttribute('id', 'notes-text');
+        nText.innerHTML = `${targetObj[0].notes}`;
     }
 
     const build = (id) => {
