@@ -138,19 +138,30 @@ form {
 #td-grid {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    max-width: 50%;
-    margin: 0 auto;
+    gap: 10px;
+    width: 50%;
+    margin: 10% auto;
+    padding: 2rem;
+    border: #4ade80 2px solid;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px black;
 }
 
 #td-title {
     display: flex;
     justify-content: center;
+    font-size: 30px;
+    font-weight: 900;
 }
 
-#summary {
+#summary, #td-date {
     display: flex;
     flex-direction: column;
+    gap: 2px;
+}
+
+#summ-title, #date-title {
+    font-weight: 700;
 }
 
 footer {

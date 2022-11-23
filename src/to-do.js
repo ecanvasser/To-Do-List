@@ -30,7 +30,7 @@ const toDoView = () => {
 
         let sTitle = summParent.insertAdjacentElement('beforeend', document.createElement('div'));
         sTitle.setAttribute('id', 'summ-title');
-        sTitle.innerHTML = 'Summary:';
+        sTitle.innerHTML = 'Summary';
 
         let sText = summParent.insertAdjacentElement('beforeend', document.createElement('div'));
         sText.setAttribute('id', 'summ-text');
@@ -42,7 +42,15 @@ const toDoView = () => {
 
         let dateDiv = tdGrid.insertAdjacentElement('beforeend', document.createElement('div'));
         dateDiv.setAttribute('id', 'td-date');
-        dateDiv.innerHTML = `${targetObj[0].duedate}`;
+        
+        
+        let dTitle = dateDiv.insertAdjacentElement('beforeend', document.createElement('div'));
+        dTitle.setAttribute('id', 'date-title');
+        dTitle.innerHTML = 'Estimated Completion';
+
+        let dText = dateDiv.insertAdjacentElement('beforeend', document.createElement('div'));
+        dText.setAttribute('id', 'date-text');
+        dText.innerHTML = `${targetObj[0].duedate}`;
     }
 
     const setNotes = () => {
