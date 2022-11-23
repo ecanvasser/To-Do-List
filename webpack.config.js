@@ -4,7 +4,8 @@ module.exports = {
   entry: {
     index: './src/index.js',
     project: './src/project.js',
-    to_do: './src/to-do.js'
+    to_do: './src/to-do.js',
+    sidebar: './src/sidebar.js'
   },
   output: {
     filename: '[name].bundle.js',
