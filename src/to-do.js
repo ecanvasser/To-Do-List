@@ -3,7 +3,7 @@ import { projects } from "./project.js";
 
 const toDoView = () => {
 
-    let targetObj = [];
+    var targetObj = [];
 
     const clearPage = () => {
         document.querySelector('#proj-grid').innerHTML = '';
@@ -37,11 +37,29 @@ const toDoView = () => {
         sText.innerHTML = `${targetObj[0].descrip}`;
     }
 
+    const setDate = () => {
+        const tdGrid = document.getElementById('td-grid');
+
+        let dateDiv = tdGrid.insertAdjacentElement('beforeend', document.createElement('div'));
+        dateDiv.setAttribute('id', 'td-date');
+        dateDiv.innerHTML = `${targetObj[0].duedate}`;
+    }
+
+    const setNotes = () => {
+        const tdGrid = document.getElementById('td-grid');
+
+        let noteDiv = tdGrid.insertAdjacentElement('beforeend', document.createElement('div'));
+        noteDiv.setAttribute('id', 'td-notes');
+        noteDiv.innerHTML = `${targetObj[0].notes}`;
+    }
+
     const build = (id) => {
         clearPage();
         findProject(id);
         setTitle();
         setSummary();
+        setDate();
+        setNotes();
     }
 
     return {
