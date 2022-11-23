@@ -1,6 +1,7 @@
 import Arrow from './arrow.svg'
 export {projectmenu, projectTiles, projects}
 import {toDoView} from './to-do.js';
+import {Sidebar} from './sidebar.js';
 
 var projects = [];
 
@@ -47,6 +48,9 @@ const projectmenu = () => {
 
         projects.push(newProj);
         menuClose();
+
+        var sb = Sidebar();
+        sb.addProj(projects);
     }
 
     return {
