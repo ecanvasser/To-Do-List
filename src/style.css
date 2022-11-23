@@ -175,6 +175,15 @@ form {
     gap: 5px;
 }
 
+#td-form {
+    display: flex;
+    gap: 5px;
+}
+
+#td-input {
+    width: 60%;
+}
+
 #todo-box {
     display: flex;
     flex: 1;

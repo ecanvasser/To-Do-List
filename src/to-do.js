@@ -79,6 +79,8 @@ const toDoView = () => {
         tdTitle.setAttribute('id', 'todo-title');
         tdTitle.innerHTML = 'To-Do';
 
+        buildForm(tdDiv);
+
         let tdText = tdDiv.insertAdjacentElement('beforeend', document.createElement('div'));
         tdText.setAttribute('id', 'todo-box');
     }
@@ -93,11 +95,31 @@ const toDoView = () => {
         tdA.setAttribute('id', 'td-btn');
         tdA.setAttribute('href', "");
 
-        tdA.addEventListener('click', function() {
-            
+        tdA.addEventListener('click', function(e) {
+            document.getElementById('td-form').style.display = 'flex';
+            e.preventDefault();
         })
 
         tdA.insertAdjacentElement('beforeend', addIcon);
+    }
+
+    const buildForm = (par) => {
+        var form = par.insertAdjacentElement('beforeend', document.createElement('form'));
+        form.setAttribute('id', 'td-form');
+
+        let label = form.insertAdjacentElement('beforeend', document.createElement('label'));
+        label.setAttribute('for', 'td-input');
+        label.innerHTML = 'Enter task:';
+
+        let input = form.insertAdjacentElement('beforeend', document.createElement('input'));
+        input.setAttribute('id', 'td-input');
+
+        let subBtn = form.insertAdjacentElement('beforeend', document.createElement('input'));
+        subBtn.setAttribute('id', 'td-submit');
+        subBtn.setAttribute('type', 'submit');
+        subBtn.setAttribute('vale', 'Add');
+
+        form.style.display = 'none';
     }
 
     const build = (id) => {
