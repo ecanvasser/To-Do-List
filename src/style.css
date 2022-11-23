@@ -43,6 +43,18 @@ main {
     margin: 20px auto;
 }
 
+#sb-projcol {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sb-row {
+    margin: 0 15px;
+    padding-bottom: 2px;
+    border-bottom: 1px #94a3b8 solid;
+}
+
 #menu-title {
     display: flex;
     justify-content: center;
