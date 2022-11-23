@@ -119,6 +119,13 @@ const toDoView = () => {
         subBtn.setAttribute('type', 'submit');
         subBtn.setAttribute('vale', 'Add');
 
+        subBtn.addEventListener('click', function(e) {
+            const inpText = document.getElementById('td-input').value;
+            let taskFunc = Task();
+            taskFunc.makeTask(inpText);
+            e.preventDefault();
+        })
+
         form.style.display = 'none';
     }
 
@@ -136,4 +143,19 @@ const toDoView = () => {
     return {
         build
     }
+}
+
+const Task = () => {
+
+    const makeTask = (value) => {
+        const box = document.getElementById('todo-box');
+        let task = box.insertAdjacentElement('beforeend', document.createElement('div'));
+        task.setAttribute('class', 'task-row')
+        task.innerHTML = `${value}`;
+    }
+    
+    return {
+        makeTask
+    }
+
 }
