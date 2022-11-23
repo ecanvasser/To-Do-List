@@ -154,14 +154,26 @@ form {
     font-weight: 900;
 }
 
-#summary, #td-date, #td-notes {
+#summary, #td-date, #td-notes, #td-div {
     display: flex;
     flex-direction: column;
     gap: 2px;
 }
 
-#summ-title, #date-title, #notes-title {
+#td-div {
+    flex: 1;
+}
+
+#summ-title, #date-title, #notes-title,
+#todo-title {
     font-weight: 700;
+}
+
+#todo-box {
+    display: flex;
+    flex: 1;
+    height: 100%;
+    border: 1px solid black;
 }
 
 footer {

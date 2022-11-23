@@ -68,6 +68,20 @@ const toDoView = () => {
         nText.innerHTML = `${targetObj[0].notes}`;
     }
 
+    const setToDo = () => {
+        const tdGrid = document.getElementById('td-grid');
+
+        let tdDiv = tdGrid.insertAdjacentElement('beforeend', document.createElement('div'));
+        tdDiv.setAttribute('id', 'td-div');
+        
+        let tdTitle = tdDiv.insertAdjacentElement('beforeend', document.createElement('div'));
+        tdTitle.setAttribute('id', 'todo-title');
+        tdTitle.innerHTML = 'To-Do';
+
+        let tdText = tdDiv.insertAdjacentElement('beforeend', document.createElement('div'));
+        tdText.setAttribute('id', 'todo-box');
+    }
+
     const build = (id) => {
         clearPage();
         findProject(id);
@@ -75,6 +89,7 @@ const toDoView = () => {
         setSummary();
         setDate();
         setNotes();
+        setToDo();
     }
 
     return {
