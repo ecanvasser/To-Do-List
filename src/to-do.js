@@ -1,11 +1,12 @@
 export {toDoView}
-import { projects } from "./project.js";
+import { projects } from "./project.js"
+import Add from './add.svg'
 
 const toDoView = () => {
 
     var targetObj = [];
 
-    const clearPage = () => {
+    const setPage = () => {
         document.querySelector('#proj-grid').innerHTML = '';
         document.querySelector('#proj-grid').id = 'td-grid';
     }
@@ -82,14 +83,32 @@ const toDoView = () => {
         tdText.setAttribute('id', 'todo-box');
     }
 
+    const setIcon = () => {
+        let addIcon = new Image();
+        addIcon.src = Add;
+        addIcon.setAttribute('id', 'td-img');
+
+        const td_title = document.getElementById('todo-title');
+        let tdA = td_title.insertAdjacentElement('beforeend', document.createElement('a'));
+        tdA.setAttribute('id', 'td-btn');
+        tdA.setAttribute('href', "");
+
+        tdA.addEventListener('click', function() {
+            
+        })
+
+        tdA.insertAdjacentElement('beforeend', addIcon);
+    }
+
     const build = (id) => {
-        clearPage();
+        setPage();
         findProject(id);
         setTitle();
         setSummary();
         setDate();
         setNotes();
         setToDo();
+        setIcon();
     }
 
     return {
