@@ -141,7 +141,7 @@ form {
     flex-direction: column;
     gap: 10px;
     width: 50%;
-    margin: 10% auto;
+    margin: 10% auto 10% auto;
     padding: 2rem;
     border: #4ade80 2px solid;
     border-radius: 15px;
@@ -192,9 +192,18 @@ form {
 #todo-box {
     display: flex;
     flex-direction: column;
+    align-items: center;
     flex: 1;
-    min-height: 300px;
-    border: 1px solid black;
+    gap: 3px;
+}
+
+.task-row {
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    font-weight: 700;
+    border-radius: 10px;
+    border: 1px #cbd5e1 solid;
+    box-shadow: 1px 1px 4px black;
+    width: 70%;
 }
 
 footer {
