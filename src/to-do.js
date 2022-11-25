@@ -1,6 +1,7 @@
 export {toDoView}
 import { projects } from "./project.js"
 import Add from './add.svg'
+import Back from './arrow_back.svg'
 
 const toDoView = () => {
 
@@ -9,6 +10,22 @@ const toDoView = () => {
     const setPage = () => {
         document.querySelector('#proj-grid').innerHTML = '';
         document.querySelector('#proj-grid').id = 'td-grid';
+    }
+
+    const backArrow = () => {
+        var bArrow = new Image();
+        bArrow.src = Back;
+
+        const tdGrid = document.getElementById('td-grid');
+        let bArrowLink = tdGrid.insertAdjacentElement('afterbegin', document.createElement('a'));
+        bArrowLink.setAttribute('id', 'back-btn');
+        bArrowLink.setAttribute('href', "");
+
+        let bArrowImg = bArrowLink.insertAdjacentElement('beforeend', bArrow);
+        bArrowImg.setAttribute('id', 'back-img');
+
+        let bArrowText = bArrowLink.insertAdjacentElement('beforeend', document.createElement('div'));
+        bArrowText.innerHTML = 'Main Dashboard';
     }
 
     const findProject = (id) => {
@@ -131,6 +148,7 @@ const toDoView = () => {
 
     const build = (id) => {
         setPage();
+        backArrow();
         findProject(id);
         setTitle();
         setSummary();

@@ -28,6 +28,7 @@ header {
 
 main {
     display: grid;
+    position: relative;
     grid-template-columns: 1fr 3fr;
     height: 610px;
     overflow: scroll;
@@ -131,7 +132,23 @@ form {
     right: 10px;
 }
 
-.arrow-img, #td-img {
+#back-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: absolute;
+    top: 15px;
+    left: 20rem;
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+}
+
+#back-btn:hover {
+    color: #4ade80;
+}
+
+.arrow-img, #td-img, #back-img {
     width: 20px;
     height: 20px;
 }
