@@ -187,8 +187,6 @@ const toDoView = () => {
     }
 }
 
-var taskList = new Array();
-
 const Task = () => {
 
     const makeTask = (value) => {
