@@ -1,5 +1,5 @@
 export {toDoView}
-import { projects } from "./project.js"
+import { projectTiles, projects } from "./project.js"
 import Add from './add.svg'
 import Back from './arrow_back.svg'
 
@@ -26,6 +26,15 @@ const toDoView = () => {
 
         let bArrowText = bArrowLink.insertAdjacentElement('beforeend', document.createElement('div'));
         bArrowText.innerHTML = 'Main Dashboard';
+
+        bArrowLink.addEventListener('click', (e) => {
+            document.getElementById('td-grid').innerHTML = '';
+            document.getElementById('td-grid').id = 'proj-grid';
+
+            let returnDash = projectTiles();
+            returnDash.build();
+            e.preventDefault();
+        })
     }
 
     const findProject = (id) => {
