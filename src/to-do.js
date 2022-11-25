@@ -145,6 +145,8 @@ const toDoView = () => {
     }
 }
 
+var taskList = [];
+
 const Task = () => {
 
     const makeTask = (value) => {
@@ -152,7 +154,16 @@ const Task = () => {
         let task = box.insertAdjacentElement('beforeend', document.createElement('div'));
         task.setAttribute('class', 'task-row')
         task.innerHTML = `${value}`;
+        logTask(value);
     }
+
+    const logTask = (task) => {
+        const titleText = document.getElementById('td-title').innerHTML;
+        var targetProj = projects.find(x => x.title == titleText);
+        targetProj['tasks'] = taskList;
+
+        taskList.push(task);
+    } 
     
     return {
         makeTask
