@@ -155,6 +155,20 @@ const toDoView = () => {
         form.style.display = 'none';
     }
 
+    const listTasks = () => {
+        var targText = document.getElementById('td-title').innerHTML;
+        var targProj = projects.find(x => x.title == targText);
+
+        if (targProj['tasks']) {
+            for (let i = 0; i < targProj['tasks'].length; i++) {
+                const tdbox = document.getElementById('todo-box');
+                let tdtask = tdbox.insertAdjacentElement('beforeend', document.createElement('div'));
+                tdtask.setAttribute('class', 'task-row')
+                tdtask.innerHTML = `${targProj['tasks'][i]}`;
+            }
+        };
+    }
+
     const build = (id) => {
         setPage();
         backArrow();
@@ -165,6 +179,7 @@ const toDoView = () => {
         setNotes();
         setToDo();
         setIcon();
+        listTasks();
     }
 
     return {
@@ -172,7 +187,7 @@ const toDoView = () => {
     }
 }
 
-var taskList = [];
+var taskList = new Array();
 
 const Task = () => {
 
@@ -187,9 +202,8 @@ const Task = () => {
     const logTask = (task) => {
         const titleText = document.getElementById('td-title').innerHTML;
         var targetProj = projects.find(x => x.title == titleText);
-        targetProj['tasks'] = taskList;
-
-        taskList.push(task);
+        targetProj['tasks'] = new Array();
+        targetProj['tasks'].push(task);
     } 
     
     return {
