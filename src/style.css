@@ -128,11 +128,24 @@ form {
 }
 
 .proj-tile {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
     position: relative;
     border: #4ade80 2px solid;
     border-radius: 10px;
     box-shadow: 2px 2px 5px black;
-    padding: 15px;
+    padding: 15px 30px 17px 15px;
+}
+
+.tile-title {
+    font-weight: 700;
+}
+
+.tile-descrip {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-y: scroll;
 }
 
 .tile-date {
