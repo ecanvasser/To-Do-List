@@ -39,8 +39,6 @@ main {
     flex-direction: column;
     background-color: #f3f4f6;
     box-shadow: inset 0px 4px 4px -1px gray;
-    /* position: relative; */
-    /* z-index: -100; */
 }
 
 #sb-title {
@@ -51,8 +49,6 @@ main {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    /* position: absolute; */
-    /* z-index: ; */
 }
 
 .sb-row {
@@ -68,6 +64,14 @@ main {
 .sb-img {
     height: 25px;
     width: 25px;
+}
+
+.sb-row a {
+    visibility: hidden;
+}
+
+.sb-row:hover a {
+    visibility: visible;
 }
 
 #menu-title {
