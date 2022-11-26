@@ -38,7 +38,9 @@ main {
     display: flex;
     flex-direction: column;
     background-color: #f3f4f6;
-    z-index: -1;
+    box-shadow: inset 0px 4px 4px -1px gray;
+    /* position: relative; */
+    /* z-index: -100; */
 }
 
 #sb-title {
@@ -49,6 +51,8 @@ main {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    /* position: absolute; */
+    /* z-index: ; */
 }
 
 .sb-row {
