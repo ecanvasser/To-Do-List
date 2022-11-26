@@ -200,8 +200,13 @@ const Task = () => {
     const logTask = (task) => {
         const titleText = document.getElementById('td-title').innerHTML;
         var targetProj = projects.find(x => x.title == titleText);
-        targetProj['tasks'] = new Array();
-        targetProj['tasks'].push(task);
+        
+        if (targetProj['tasks']) {
+            targetProj['tasks'].push(task);
+        } else {
+            targetProj['tasks'] = new Array();
+            targetProj['tasks'].push(task);
+        }
     } 
     
     return {
