@@ -23,7 +23,7 @@ const projectmenu = () => {
         document.getElementsByTagName('main')[0].style.opacity = '1';
         document.getElementsByTagName('main')[0].style.zIndex = '0';
         document.getElementsByTagName('footer')[0].style.opacity = '1';
-        document.getElementById('sidebar').style.boxShadow = 'inset 0px 3px 4px 0 gray';
+        document.getElementById('sidebar').style.boxShadow = 'inset 0px 4px 4px 0 gray';
     }
 
     const addProj = () => {

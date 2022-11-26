@@ -8,8 +8,12 @@ const toDoView = () => {
     var targetObj = [];
 
     const setPage = () => {
-        document.querySelector('#proj-grid').innerHTML = '';
-        document.querySelector('#proj-grid').id = 'td-grid';
+        if (document.getElementById('td-grid')) {
+            document.getElementById('td-grid').innerHTML = '';
+        } else {
+            document.querySelector('#proj-grid').innerHTML = '';
+            document.querySelector('#proj-grid').id = 'td-grid';
+        }
     }
 
     const backArrow = () => {
