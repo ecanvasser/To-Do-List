@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'Title';
+    src: url('./titles.ttf');
+}
+
+@font-face {
+    font-family: 'Body';
+    src: url('./RobotoReg.ttf');
+}
+
 body {
     margin: 0;
     display: flex;
@@ -16,14 +26,21 @@ header {
     margin-left: 3rem;
     display: flex;
     align-items: center;
+    font-family: 'Title';
+    font-size: 35px;
 }
 
 #new-proj {
+    display: flex;
+    align-items: center;
     margin-right: 3rem;
     background-color: white;
     padding: 7px 18px;
     text-decoration: none;
     border-radius: 12px;
+    font-family: 'Body';
+    font-size: 15px;
+    color: black;
 }
 
 main {
@@ -43,6 +60,8 @@ main {
 
 #sb-title {
     margin: 20px auto;
+    font-family: 'Title';
+    font-size: 20px;
 }
 
 #sb-projcol {
@@ -55,7 +74,7 @@ main {
     display: flex;
     justify-content: space-between;
     margin: 0 60px;
-    font-weight: 700;
+    font-family: 'Title';
     font-size: 20px;
     padding-bottom: 2px;
     border-bottom: 1px #94a3b8 solid;
@@ -78,6 +97,18 @@ main {
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
+    font-family: 'Title';
+    font-size: 25px;
+}
+
+#project > label {
+    font-family: 'Title';
+    font-size: 15px;
+}
+
+#project > input, textarea {
+    margin-bottom: 5px;
+    font-family: 'Body';
 }
 
 #np-menu {
@@ -86,7 +117,8 @@ main {
     left: 40%;
     top: 25%;
     background-color: rgba(229, 229, 229, 1);
-    padding: 20px;
+    padding: 30px;
+    width: 350px;
     border: #4ade80 2px solid;
     border-radius: 8px;
 }
@@ -111,6 +143,8 @@ main {
     color: white;
     padding: 8px 12px;
     border-radius: 8px;
+    font-family: 'Body';
+    font-size: 15px;
 }
 
 form {
@@ -139,19 +173,23 @@ form {
 }
 
 .tile-title {
-    font-weight: 700;
+    font-family: 'Title';
 }
 
 .tile-descrip {
     white-space: pre-wrap;
     word-wrap: break-word;
     overflow-y: scroll;
+    font-family: 'Body';
+    font-size: 15px;
 }
 
 .tile-date {
     position: absolute;
     top: 10px;
     right: 10px;
+    font-family: 'Body';
+    font-size: 15px;
 }
 
 .arrow-btn {
@@ -169,7 +207,9 @@ form {
     left: 26%;
     text-decoration: none;
     color: black;
+    font-family: 'Body';
     font-size: 15px;
+    font-weight: 700;
 }
 
 #back-btn:hover {
@@ -197,7 +237,7 @@ form {
     display: flex;
     justify-content: center;
     font-size: 30px;
-    font-weight: 900;
+    font-family: 'Title';
 }
 
 #summary, #td-date, #td-notes, #td-div {
@@ -212,7 +252,14 @@ form {
 
 #summ-title, #date-title, #notes-title,
 #todo-title {
-    font-weight: 700;
+    font-family: 'Title';
+}
+
+#summ-text, #date-text, #notes-text {
+    font-family: 'Body';
+    font-size: 15px;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 8px;
 }
 
 #todo-title {
@@ -223,6 +270,7 @@ form {
 #td-form {
     display: flex;
     gap: 5px;
+    font-family: 'Title';
 }
 
 #td-input {
@@ -244,7 +292,7 @@ form {
 
 .task-row {
     padding: 0.5rem 0 0.5rem 1.5rem;
-    font-weight: 700;
+    font-family: 'Title';
     border-radius: 10px;
     border: 1px #cbd5e1 solid;
     box-shadow: 1px 1px 4px black;
@@ -259,4 +307,6 @@ footer {
     width: 100%;
     padding: 0.5rem 0;
     background-color: #4ade80;
+    font-family: 'Body';
+    font-size: 15px;
 }
