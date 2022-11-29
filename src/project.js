@@ -1,9 +1,8 @@
 import Arrow from './arrow.svg'
-export {projectmenu, projectTiles, projects}
+export {projectmenu, projectTiles, localProjects}
 import {toDoView} from './to-do.js';
 import {Sidebar} from './sidebar.js';
 
-var projects = [];
 var localProjects = [];
 
 const projectmenu = () => {
@@ -48,7 +47,6 @@ const projectmenu = () => {
             }
         });
 
-        projects.push(newProj);
         menuClose();
 
         var projectBuilder = {
@@ -114,7 +112,7 @@ const projectTiles = () => {
         const toDo = toDoView();
         aTag.addEventListener('click', function(e) {
             let targetId = e.target.closest('.proj-tile').id;
-            toDo.build(targetId);
+            toDo.build(targetId)
             e.preventDefault();
         })
     }

@@ -1,5 +1,5 @@
 export {toDoView}
-import { projectTiles, projects } from "./project.js"
+import { projectTiles, localProjects } from "./project.js"
 import Add from './add.svg'
 import Back from './arrow_back.svg'
 
@@ -11,8 +11,8 @@ const toDoView = () => {
         if (document.getElementById('td-grid')) {
             document.getElementById('td-grid').innerHTML = '';
         } else {
-            document.querySelector('#proj-grid').innerHTML = '';
             document.querySelector('#proj-grid').id = 'td-grid';
+            document.querySelector('#td-grid').innerHTML = '';
         }
     }
 
@@ -42,7 +42,7 @@ const toDoView = () => {
     }
 
     const findProject = (id) => {
-        targetObj.push(projects.find(x => x.title == id));
+        targetObj.push(localProjects.find(x => x.title == id));
     }
 
     const setTitle = () => {
@@ -161,7 +161,7 @@ const toDoView = () => {
 
     const listTasks = () => {
         var targText = document.getElementById('td-title').innerHTML;
-        var targProj = projects.find(x => x.title == targText);
+        var targProj = localProjects.find(x => x.title == targText);
 
         if (targProj['tasks']) {
             for (let i = 0; i < targProj['tasks'].length; i++) {
@@ -203,7 +203,7 @@ const Task = () => {
 
     const logTask = (task) => {
         const titleText = document.getElementById('td-title').innerHTML;
-        var targetProj = projects.find(x => x.title == titleText);
+        var targetProj = localProjects.find(x => x.title == titleText);
         
         if (targetProj['tasks']) {
             targetProj['tasks'].push(task);

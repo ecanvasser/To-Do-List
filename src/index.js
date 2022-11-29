@@ -4,7 +4,7 @@ import {projectmenu, projectTiles} from './project.js';
 const proj = projectmenu();
 const tiles = projectTiles();
 
-if (document.getElementById('proj-grid').innerHTML == '') {
+if (document.getElementById('proj-grid') && document.getElementById('proj-grid').innerHTML == '') {
     tiles.build();
 }
 
