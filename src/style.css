@@ -166,7 +166,6 @@ form {
     flex-direction: column;
     gap: 5px;
     position: relative;
-    width: 235px;
     border: #4ade80 2px solid;
     border-radius: 10px;
     box-shadow: 2px 2px 5px black;
