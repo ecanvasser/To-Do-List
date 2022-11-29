@@ -1,4 +1,4 @@
-export {Sidebar}
+export { Sidebar }
 import Arrow from './arrow.svg'
 import { toDoView } from './to-do.js'
 

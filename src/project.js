@@ -57,12 +57,6 @@ const projectmenu = () => {
         }
 
         localStorage.setItem(`${newProj.title}`, JSON.stringify(projectBuilder));
-        
-        // var obj = localStorage.getItem(`${newProj.title}`);
-        // console.log(JSON.parse(obj));
-
-        var sb = Sidebar();
-        sb.addProj(projects);
     }
 
     return {
@@ -137,6 +131,9 @@ const projectTiles = () => {
             setDate(i, localProjects);
             setArrow(i)
         }
+
+        var sb = Sidebar();
+        sb.addProj(localProjects);
     }
 
     return {
