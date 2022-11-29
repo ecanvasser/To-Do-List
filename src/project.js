@@ -4,6 +4,7 @@ import {toDoView} from './to-do.js';
 import {Sidebar} from './sidebar.js';
 
 var projects = [];
+var localProjects = [];
 
 const projectmenu = () => {
     
@@ -50,6 +51,18 @@ const projectmenu = () => {
         projects.push(newProj);
         menuClose();
 
+        var projectBuilder = {
+            'title': newProj.title,
+            'descrip': newProj.descrip,
+            'duedate': newProj.duedate,
+            'notes': newProj.notes
+        }
+
+        localStorage.setItem(`${newProj.title}`, JSON.stringify(projectBuilder));
+        
+        // var obj = localStorage.getItem(`${newProj.title}`);
+        // console.log(JSON.parse(obj));
+
         var sb = Sidebar();
         sb.addProj(projects);
     }
@@ -67,7 +80,7 @@ const projectTiles = () => {
     const mainDiv = (i, array) => {
         let newDiv = pGrid.insertAdjacentElement('beforeend', document.createElement('div'));
         newDiv.setAttribute('class', 'proj-tile');
-        newDiv.setAttribute('id', array[i].title)
+        newDiv.setAttribute('id', array[i].title);
     }
 
     const setTitle = (i, array) => {
@@ -107,12 +120,23 @@ const projectTiles = () => {
     }
 
     const build = () => {
+
         pGrid.innerHTML = '';
-        for (let i = 0; i < projects.length; i++) {
-            mainDiv(i, projects);
-            setTitle(i, projects);
-            setDescrip(i, projects);
-            setDate(i, projects);
+        localProjects.splice(0, localProjects.length);
+
+        for (var key in localStorage) {
+            if (localStorage.hasOwnProperty(key)) {
+                if (!localProjects.includes(JSON.parse(localStorage[key]))) {
+                    localProjects.push(JSON.parse(localStorage[key]));
+                }
+            }
+        }
+
+        for (let i = 0; i < localProjects.length; i++) {
+            mainDiv(i, localProjects);
+            setTitle(i, localProjects);
+            setDescrip(i, localProjects);
+            setDate(i, localProjects);
             setArrow(i)
         }
     }

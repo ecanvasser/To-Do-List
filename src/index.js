@@ -4,6 +4,10 @@ import {projectmenu, projectTiles} from './project.js';
 const proj = projectmenu();
 const tiles = projectTiles();
 
+if (document.getElementById('proj-grid').innerHTML == '') {
+    tiles.build();
+}
+
 document.getElementById('new-proj').addEventListener('click', function(e) {
     proj.menuDisplay();
     e.preventDefault();
