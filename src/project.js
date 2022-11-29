@@ -1,7 +1,8 @@
 import Arrow from './arrow.svg'
+import Delete from './delete.svg'
 export {projectmenu, projectTiles, localProjects}
-import {toDoView} from './to-do.js';
-import {Sidebar} from './sidebar.js';
+import {toDoView} from './to-do.js'
+import {Sidebar} from './sidebar.js'
 
 var localProjects = [];
 
@@ -98,7 +99,7 @@ const projectTiles = () => {
         arrow.src = Arrow;
         arrow.setAttribute('class', 'arrow-img');
 
-        let aTag = pGrid.children[i].insertAdjacentElement('beforeend', document.createElement('a'));
+        var aTag = pGrid.children[i].insertAdjacentElement('beforeend', document.createElement('a'));
         aTag.setAttribute('href', "");
         aTag.setAttribute('class', 'arrow-btn');
         aTag.insertAdjacentElement('beforeend', arrow);
@@ -109,6 +110,17 @@ const projectTiles = () => {
             toDo.build(targetId)
             e.preventDefault();
         })
+    }
+
+    const setDelete = (i) => {
+        let trash = new Image();
+        trash.src = Delete;
+        trash.setAttribute('class', 'delete-img');
+
+        var aTag = pGrid.children[i].insertAdjacentElement('beforeend', document.createElement('a'));
+        aTag.setAttribute('href', "");
+        aTag.setAttribute('class', 'delete-btn');
+        aTag.insertAdjacentElement('beforeend', trash);
     }
 
     const build = () => {
@@ -127,9 +139,10 @@ const projectTiles = () => {
         for (let i = 0; i < localProjects.length; i++) {
             mainDiv(i, localProjects);
             setTitle(i, localProjects);
-            setDescrip(i, localProjects);
             setDate(i, localProjects);
+            setDescrip(i, localProjects);
             setArrow(i)
+            setDelete(i);
         }
 
         var sb = Sidebar();

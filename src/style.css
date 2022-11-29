@@ -166,6 +166,7 @@ form {
     flex-direction: column;
     gap: 5px;
     position: relative;
+    width: 235px;
     border: #4ade80 2px solid;
     border-radius: 10px;
     box-shadow: 2px 2px 5px black;
@@ -185,11 +186,14 @@ form {
 }
 
 .tile-date {
+    font-family: 'Body';
+    font-size: 15px;
+}
+
+.delete-btn {
     position: absolute;
     top: 10px;
     right: 10px;
-    font-family: 'Body';
-    font-size: 15px;
 }
 
 .arrow-btn {
@@ -216,7 +220,7 @@ form {
     color: #4ade80;
 }
 
-.arrow-img, #td-img, #back-img {
+.arrow-img, #td-img, #back-img, .delete-img {
     width: 20px;
     height: 20px;
 }
