@@ -9,7 +9,9 @@ if (document.getElementById('proj-grid') && document.getElementById('proj-grid')
 }
 
 document.getElementById('new-proj').addEventListener('click', function(e) {
-    proj.menuDisplay();
+    if (document.getElementById('proj-grid')) {
+        proj.menuDisplay();
+    }
     e.preventDefault();
 })
 
