@@ -211,6 +211,8 @@ const Task = () => {
             targetProj['tasks'] = new Array();
             targetProj['tasks'].push(task);
         }
+
+        localStorage.setItem(`${titleText}`, JSON.stringify(targetProj));
     } 
     
     return {
