@@ -131,29 +131,44 @@ const projectTiles = () => {
     }
 
     const build = () => {
+        if (document.getElementById('proj-grid')) {
+            pGrid.innerHTML = '';
+            localProjects.splice(0, localProjects.length);
 
-        pGrid.innerHTML = '';
-        localProjects.splice(0, localProjects.length);
-
-        for (var key in localStorage) {
-            if (localStorage.hasOwnProperty(key)) {
-                if (!localProjects.includes(JSON.parse(localStorage[key]))) {
-                    localProjects.push(JSON.parse(localStorage[key]));
+            for (var key in localStorage) {
+                if (localStorage.hasOwnProperty(key)) {
+                    if (!localProjects.includes(JSON.parse(localStorage[key]))) {
+                        localProjects.push(JSON.parse(localStorage[key]));
+                    }
                 }
             }
-        }
 
-        for (let i = 0; i < localProjects.length; i++) {
-            mainDiv(i, localProjects);
-            setTitle(i, localProjects);
-            setDate(i, localProjects);
-            setDescrip(i, localProjects);
-            setArrow(i)
-            setDelete(i);
-        }
+            for (let i = 0; i < localProjects.length; i++) {
+                mainDiv(i, localProjects);
+                setTitle(i, localProjects);
+                setDate(i, localProjects);
+                setDescrip(i, localProjects);
+                setArrow(i)
+                setDelete(i);
+            }
 
-        var sb = Sidebar();
-        sb.addProj(localProjects);
+            var sb = Sidebar();
+            sb.addProj(localProjects);
+            
+        } else {
+            localProjects.splice(0, localProjects.length);
+
+            for (var key in localStorage) {
+                if (localStorage.hasOwnProperty(key)) {
+                    if (!localProjects.includes(JSON.parse(localStorage[key]))) {
+                        localProjects.push(JSON.parse(localStorage[key]));
+                    }
+                }
+            }
+
+            var sb = Sidebar();
+            sb.addProj(localProjects);
+        }
     }
 
     return {
