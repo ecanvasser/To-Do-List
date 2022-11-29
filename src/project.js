@@ -121,6 +121,13 @@ const projectTiles = () => {
         aTag.setAttribute('href', "");
         aTag.setAttribute('class', 'delete-btn');
         aTag.insertAdjacentElement('beforeend', trash);
+
+        aTag.addEventListener('click', function(e) {
+            let targetId = e.target.closest('.proj-tile').id;
+            localStorage.removeItem(targetId);
+            e.target.closest('.proj-tile').removeItem()
+            e.preventDefault();
+        })
     }
 
     const build = () => {
